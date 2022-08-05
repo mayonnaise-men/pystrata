@@ -495,7 +495,9 @@ class FourierAmplitudeSpectrumOutput(LocationBasedOutput):
             )
 
         self._add_values(smoothed)
-
+    def _iter_(self):
+        '''Returns itereable object'''
+        return FourierAmplitudeSpectrumOutputIterator(self)
 
 class ResponseSpectrumOutput(LocationBasedOutput):
     _const_ref = True
